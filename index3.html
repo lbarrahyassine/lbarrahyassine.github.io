@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yassine Lbarrah | Data & Software Engineer</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --text-color: #F3F4F6;
+            --accent-color: #007bff;
+            --secondary-color: #8892b0;
+            --border-color: #333333;
+            --box-bg-color: #030712;
+        }
+
+        :root.light-theme {
+            --bg-color: #f9f9f9;
+            --text-color: #030712CC;
+            --accent-color: #030712;
+            --secondary-color: #677694;
+            --border-color: #e0e0e0;
+            --box-bg-color: #f9f9f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--accent-color);
+            transition: opacity 0.2s ease;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background-color: var(--box-bg-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .terminal-prompt::after {
+            content: "";
+            width: 10px;
+            height: 18px;
+            background: var(--accent-color);
+            display: inline-block;
+            animation: cursor-blink 1.2s steps(2) infinite;
+            position: relative;
+            top: 3px;
+            margin-left: 4px;
+        }
+
+        @keyframes cursor-blink {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .section-header {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .experience-item, .project-item {
+            margin-bottom: 2rem;
+        }
+
+        .experience-title, .project-title {
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-period, .project-tech {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tag {
+            background-color: #F3F4F6 ;
+            color: var(--accent-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 100;
+            transition: background-color 0.4s ease;
+            padding-left: 2px;
+            padding-bottom: 1px;
+        }
+
+        .project-links {
+            display: flex;
+            margin-top: 0.5rem;
+        }
+
+        .project-links a {
+            margin-right: 1rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .project-links a svg {
+            margin-right: 0.25rem;
+            width: 16px;
+            height: 16px;
+        }
+
+        .socials {
+            display: flex;
+            margin-top: 1rem;
+        }
+
+        .socials a {
+            margin-right: 1rem;
+            border-bottom: none;
+        }
+
+        header {
+            background-color: var(--box-bg-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+        }
+        footer {
+            /* background-color: var(--box-bg-color); */
+            /* padding: 1.5rem; */
+            /* border-radius: 8px; */
+            margin-top: 2rem;
+            text-align: center;
+            /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+        }
+
+        .copyright {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+        .location {
+            max-width: 28rem;
+            align-items: center; 
+            font-size: 0.9rem;
+            line-height: 1.5rem; 
+            margin-top: 10px;
+            text-wrap: pretty;
+            display: flex;
+        }
+
+        .location a {
+            border-bottom: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .location svg {
+            margin-right: 0.5rem;
+            position: relative;
+            top: 1px;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-direction: row-reverse;
+        }
+
+        .profile-picture {
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" id="theme-toggle">☀️</button>
+    <header>
+        <div class="profile-container">
+            <img src="profile1.png" alt="Yassine Lbarrah" class="profile-picture">
+            <div class="profile-info">
+                <div class="terminal-header">
+                    <div class="terminal-prompt">~/$ whoami<span></span></div>
+                </div>
+                <h1>Yassine Lbarrah</h1>
+                <p>Data & Software Engineer focusing on building applications with clean code and data-driven solutions.</p>
+                <p>Currently studying at <a href="https://insea.ac.ma/">National Institute of Statistics and Applied Economics</a> in Rabat.</p>
+                <div class="socials">
+                    <a href="https://github.com/lbarrahyassine" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/lbarrahyassine" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="mailto:lbrrahyassine@gmail.com" class="contact-link" title="Email me">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+                <p class="location hover:underline"><a target="_blank" rel="noopener noreferrer" aria-label="Location: Rabat, Morocco, GMT"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe size-3" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg> Rabat, Morocco, GMT</a></p>
+            </div>
+        </div>
+    </header>
+   
+    <section id="about">
+        <div class="section-header">About</div>
+        <p>I'm a Data & Software Engineering student with experience in building applications and data-driven solutions. My expertise includes Python, Java, and data analysis. I enjoy solving complex problems and creating elegant, efficient solutions.</p>
+        <p>Currently focused on deepening my knowledge in data engineering, machine learning, and software development.</p>
+    </section>
+
+    <section id="education">
+        <div class="section-header">Education</div>
+        
+        <div class="experience-item">
+            <div class="experience-title">National Institute of Statistics and Applied Economics - Rabat</div>
+            <div class="experience-period">September 2023 - Present</div>
+            <p>Data & Software Engineering</p>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-title">Reda Slaoui High-School - Agadir</div>
+            <div class="experience-period">September 2021 - June 2023</div>
+            <p>Preparatory Classes (CPGE) MP: mathematics, physics</p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-header">Experience</div>
+        
+        <div class="experience-item">
+            <div class="experience-title">Software Engineering Intern at Coca-Cola - SBGS</div>
+            <div class="experience-period">July 2024 - August 2024</div>
+            <p>Developed an equipment tracking application for quality control and periodic inspections. Designed and implemented a user-friendly UI with automated verification processes. Collaborated with the quality control manager and performed data modeling using the Merise methodology.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header">Projects</div>
+        
+        <div class="project-item">
+            <div class="project-title">Mini-Pascal-Compiler</div>
+            <div class="project-tech">Python, PyQt5</div>
+            <p>Developed a mini-compiler, integrating lexical, syntax, semantic analysis, a code generator and an interpreter. Designed a user-friendly graphical interface for code compilation and error visualization.</p>
+            <div class="project-links">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-title">Smart Timetable Generator</div>
+            <div class="project-tech">Java, JSCIPOpt, Cplex OPL</div>
+            <p>Developed a smart timetable generator using linear programming to optimize school scheduling. Implemented constraint-based optimization techniques to ensure efficiency and feasibility.</p>
+            <div class="project-links">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-title">Voice Anonymization using Auto-encoder and Adversial Training</div>
+            <div class="project-tech">PyTorch, Seaborn</div>
+            <p>An audio anonymization algorithm based on D Vector, to modify voice characteristics while preserving intelligibility for privacy protection. This project was part of a national competition organized by Inwi at UM6P.</p>
+        </div>
+
+        <div class="project-item">
+            <div class="project-title">Pro G: Platform for INSEA Students</div>
+            <div class="project-tech">Flutter, Firebase</div>
+            <p>Developed a platform for sharing projects, PFE, and reports for INSEA students. Integrated a chatbot for assistance during the project development process.</p>
+        </div>
+
+        <div class="project-item">
+            <div class="project-title">Analyzing Customer Reviews of Bank Agencies in Morocco</div>
+            <div class="project-tech">Python, Playwright, Apache Airflow, PostgreSQL, DBT</div>
+            <p>Developed an ETL pipeline to extract, clean, and analyze customer reviews from Google Maps. Designed a data warehouse using a Star Schema for structured storage. Automated workflows for data collection, transformation, and visualization.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-header">Skills</div>
+        <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Java</span>
+            <span class="tag">C</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Dart</span>
+            <span class="tag">PHP</span>
+            <span class="tag">Oracle Database</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">Docker</span>
+            <span class="tag">SAS</span>
+            <span class="tag">Flutter</span>
+            <span class="tag">Android Studio</span>
+            <span class="tag">Git</span>
+        </div>
+    </section>
+
+    <section id="leadership">
+        <div class="section-header">Leadership</div>
+        <p>FORUM GENI ENTREPRISES: Head of Publications, overseeing the club's magazine and editorial team. Previously managed logistics, prospection, and sponsorship, organizing events and securing corporate partnerships.</p>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const htmlElement = document.documentElement;
+            
+            // Check for saved theme preference or use default
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            htmlElement.classList.toggle('light-theme', savedTheme === 'light');
+            
+            // Update button text based on current theme
+            updateButtonText();
+            
+            // Toggle theme when button is clicked
+            themeToggle.addEventListener('click', function() {
+                htmlElement.classList.toggle('light-theme');
+                
+                // Save theme preference
+                const currentTheme = htmlElement.classList.contains('light-theme') ? 'light' : 'dark';
+                localStorage.setItem('theme', currentTheme);
+                
+                // Update button text
+                updateButtonText();
+            });
+            
+            function updateButtonText() {
+                const isDarkTheme = !htmlElement.classList.contains('light-theme');
+                themeToggle.textContent = isDarkTheme ? '☀️' : '🌙';
+            }
+        });
+    </script>
+
+</body>
+<footer>
+    <div class="copyright">
+        &copy; 2025 Yassine Lbarrah. All rights reserved.
+    </div>
+</footer>
+
+</html>
