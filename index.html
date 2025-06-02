@@ -73,6 +73,10 @@
             margin-bottom: 2rem;
         }
 
+        .terminal-prompt {
+            font-size: 1rem;
+        }
+
         .terminal-prompt::after {
             content: "";
             width: 10px;
@@ -188,24 +192,16 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 1.5rem 1rem;
-            }
-        }
         footer {
-            /* background-color: var(--box-bg-color); */
-            /* padding: 1.5rem; */
-            /* border-radius: 8px; */
             margin-top: 2rem;
             text-align: center;
-            /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
         }
 
         .copyright {
             color: var(--secondary-color);
             font-size: 0.9rem;
         }
+        
         .location {
             max-width: 28rem;
             align-items: center; 
@@ -248,6 +244,107 @@
         .profile-info {
             flex: 1;
         }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .profile-container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .profile-picture {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .terminal-header {
+                margin-bottom: 0.7rem;
+                justify-content: center;
+            }
+            
+            .terminal-prompt {
+                font-size: 0.8rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .socials {
+                justify-content: center;
+                margin-top: 1rem;
+            }
+            
+            .location {
+                justify-content: center;
+                font-size: 0.8rem;
+            }
+            
+            section {
+                padding: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .section-header {
+                font-size: 1.1rem;
+            }
+            
+            .theme-toggle {
+                width: 2rem;
+                height: 2rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 0rem;
+            }
+            body {
+                padding: 0.75rem;
+            }
+            
+            .terminal-prompt {
+                font-size: 0.7rem;
+            }
+            
+            h1 {
+                font-size: 1.3rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            p {
+                font-size: 0.9rem;
+            }
+            
+            .profile-picture {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .socials a svg {
+                width: 15px;
+                height: 15px;
+            }
+            
+            section {
+                padding: 0.75rem;
+            }
+            
+            .tags {
+                gap: 0.25rem;
+            }
+            
+            .tag {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.4rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -261,7 +358,7 @@
                 </div>
                 <h1>Yassine Lbarrah</h1>
                 <p>Data & Software Engineer focusing on building applications with clean code and data-driven solutions.</p>
-                <p>Currently studying at <a href="https://insea.ac.ma/">National Institute of Statistics and Applied Economics</a> in Rabat.</p>
+                <!-- <p>Currently studying at <a href="https://insea.ac.ma/">National Institute of Statistics and Applied Economics</a> in Rabat.</p> -->
                 <div class="socials">
                     <a href="https://github.com/lbarrahyassine" target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -386,13 +483,18 @@
             <span class="tag">SAS</span>
             <span class="tag">Flutter</span>
             <span class="tag">Android Studio</span>
+            <span class="tag">Angular</span>
             <span class="tag">Git</span>
         </div>
     </section>
 
     <section id="leadership">
         <div class="section-header">Leadership</div>
-        <p>FORUM GENI ENTREPRISES: Head of Publications, overseeing the club's magazine and editorial team. Previously managed logistics, prospection, and sponsorship, organizing events and securing corporate partnerships.</p>
+        <div class="experience-item">
+            <div class="experience-title">FORUM GENI ENTREPRISES : <br> Vice-President & Head of Publications</div>
+            <p>◦ Leading the editorial team and managing the publication of the club's official magazine.</p>
+            <p>◦ Overseeing logistics, corporate prospection, sponsorship acquisition, and events organization.</p>
+        </div>
     </section>
 
     <script>
