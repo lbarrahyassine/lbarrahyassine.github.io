@@ -255,6 +255,7 @@
                 flex-direction: column;
                 gap: 1rem;
                 text-align: center;
+                padding-top: 1rem;
             }
             
             .profile-picture {
@@ -503,7 +504,7 @@
             const htmlElement = document.documentElement;
             
             // Check for saved theme preference or use default
-            const savedTheme = localStorage.getItem('theme') || 'dark';
+            const savedTheme = localStorage.getItem('theme') || 'light';
             htmlElement.classList.toggle('light-theme', savedTheme === 'light');
             
             // Update button text based on current theme
