@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Allow: /favicon/
+Allow: /assets/
+
+# Sitemap location
+Sitemap: https://lbarrahyassine.live/sitemap.xml 
