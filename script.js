@@ -8,22 +8,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set initial theme
     if (savedTheme === 'light') {
         htmlElement.classList.add('light-theme');
-        themeToggle.checked = true;
+        themeToggle.checked = false; // Sun should be highlighted for light theme
     } else {
         htmlElement.classList.remove('light-theme');
-        themeToggle.checked = false;
+        themeToggle.checked = true; // Moon should be highlighted for dark theme
     }
     
     // Toggle theme when switch is clicked
     themeToggle.addEventListener('change', function() {
         if (this.checked) {
-            // Switch to light theme
-            htmlElement.classList.add('light-theme');
-            localStorage.setItem('theme', 'light');
-        } else {
-            // Switch to dark theme
+            // Switch to dark theme (moon highlighted)
             htmlElement.classList.remove('light-theme');
             localStorage.setItem('theme', 'dark');
+        } else {
+            // Switch to light theme (sun highlighted)
+            htmlElement.classList.add('light-theme');
+            localStorage.setItem('theme', 'light');
         }
     });
 });

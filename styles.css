@@ -17,6 +17,7 @@
     --secondary-color: #677694;
     --border-color: #e0e0e0;
     --box-bg-color: #f9f9f9;
+    --accent-gradient: linear-gradient(135deg, #b5bac2 0%, #e7e8ea 100%); /* Grey gradient for light theme slider */
 }
 
 * {
@@ -100,7 +101,27 @@ section {
 }
 
 .experience-item, .project-item {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.experience-item {
+    padding-bottom: 1.5rem;
+    position: relative;
+}
+
+.experience-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.experience-item:last-child {
+    padding-bottom: 0;
 }
 
 .experience-title, .project-title {
@@ -112,6 +133,16 @@ section {
     color: var(--secondary-color);
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
+}
+
+.experience-location, .experience-company {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.experience-organization {
+    margin-bottom: 0.75rem;
 }
 
 .tags {
@@ -197,19 +228,19 @@ input:checked + .slider:before {
 }
 
 .sun-icon {
-    color: #fff;
+    color: var(--text-color); /* Sun highlighted by default (light theme) */
 }
 
 .moon-icon {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.5); /* Moon faded by default (light theme) */
 }
 
 input:checked + .slider .sun-icon {
-    color: var(--text-color);
+    color: rgba(255, 255, 255, 0.5); /* Sun faded when checked (dark theme) */
 }
 
 input:checked + .slider .moon-icon {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--text-color); /* Moon highlighted when checked (dark theme) */
 }
 
 .project-links {
