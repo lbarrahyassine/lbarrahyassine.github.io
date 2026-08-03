@@ -98,6 +98,15 @@ section {
     padding-bottom: 0.5rem;
 }
 
+/* Dark mode logo inversion */
+.dark-mode-invert {
+    filter: brightness(0) invert(1);
+}
+
+:root.light-theme .dark-mode-invert {
+    filter: none;
+}
+
 .experience-item, .project-item {
     margin-bottom: 1.5rem;
 }
