@@ -2,6 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
     
+    // Guard clause - make sure elements exist
+    if (!themeToggle) {
+        console.warn('Theme toggle element not found');
+        return;
+    }
+    
     // Check for saved theme preference or use default (light theme)
     const savedTheme = localStorage.getItem('theme') || 'light';
     
